@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TaxiTask" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i7K-0T-TXO">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="5jq-KT-Wva"/>
+                                </connections>
+                            </mapView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iAr-vI-RS7">
+                                <rect key="frame" x="20" y="66" width="335" height="58"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ud5-MZ-sGF">
+                                        <rect key="frame" x="8" y="12" width="319" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="ud5-MZ-sGF" firstAttribute="leading" secondItem="iAr-vI-RS7" secondAttribute="leading" constant="8" id="PL6-ae-1gk"/>
+                                    <constraint firstItem="ud5-MZ-sGF" firstAttribute="top" secondItem="iAr-vI-RS7" secondAttribute="top" constant="12" id="aQ6-hY-L6C"/>
+                                    <constraint firstAttribute="bottom" secondItem="ud5-MZ-sGF" secondAttribute="bottom" constant="13" id="j4o-HU-NDU"/>
+                                    <constraint firstAttribute="height" constant="58" id="sIS-XB-URF"/>
+                                    <constraint firstAttribute="trailing" secondItem="ud5-MZ-sGF" secondAttribute="trailing" constant="8" id="yv5-sr-BKN"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iAr-vI-RS7" secondAttribute="trailing" constant="20" id="L1l-Qx-rTN"/>
+                            <constraint firstItem="iAr-vI-RS7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Soz-hP-7v6"/>
+                            <constraint firstItem="iAr-vI-RS7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="46" id="XOr-dX-07M"/>
+                            <constraint firstItem="i7K-0T-TXO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="b7b-Jm-Uwt"/>
+                            <constraint firstItem="i7K-0T-TXO" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="eFu-sm-Zu2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="iAr-vI-RS7" secondAttribute="bottom" constant="543" id="jzz-6p-3Aq"/>
+                            <constraint firstItem="i7K-0T-TXO" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="pu6-lu-9BU"/>
+                            <constraint firstItem="i7K-0T-TXO" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="xTP-Zf-ayi"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="locationName" destination="ud5-MZ-sGF" id="7YX-kV-rgr"/>
+                        <outlet property="mapView" destination="i7K-0T-TXO" id="mBS-OR-HP1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.0809595202399"/>
+        </scene>
+    </scenes>
+</document>
