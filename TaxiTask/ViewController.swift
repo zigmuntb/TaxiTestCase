@@ -93,16 +93,17 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 			locationManager.startUpdatingLocation()
 			break
 		case .denied:
-			break
+			showAlert()
 		case .notDetermined:
 			locationManager.requestWhenInUseAuthorization()
 		case .restricted:
-			break
+			showAlert()
 		@unknown default:
 			fatalError()
 		}
 	}
 	
+	//MARK: - Location delegate methods
 	func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
 		guard let location = locations.last else { return }
 		let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
@@ -113,6 +114,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 	
 	func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
 		locationAutorizationCheck()
+	}
+	
+	private func showAlert() {
+		let alert = UIAlertController(title: "Error", message: "Please turn on geo location", preferredStyle: .alert)
+		alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+		self.present(alert, animated: true, completion: nil)
 	}
 }
 
