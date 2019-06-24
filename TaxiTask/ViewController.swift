@@ -21,17 +21,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 	let locationDataModel = LocationDataModel()
 	
 	let regionInMeters: Double = 1000
-	var longitude : Double = 0
-	var latitude : Double = 0
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
 		locationServicesCheck()
-		latitude = mapView.centerCoordinate.latitude
-		longitude = mapView.centerCoordinate.longitude
 		
-		getLocationData(url: "https://nominatim.openstreetmap.org/reverse.php?format=json&lat=\(latitude)&lon=\(longitude)")
+		
+		
 	}
 
 	func setupLocationManager() {
@@ -93,6 +90,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 			break
 		case .authorizedWhenInUse:
 			zoomInOnUserLocation()
+			locationManager.startUpdatingLocation()
 			break
 		case .denied:
 			break
@@ -106,11 +104,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 	}
 	
 	func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-		return
+		guard let location = locations.last else { return }
+		let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+		let region = MKCoordinateRegion(center: center, latitudinalMeters: regionInMeters, longitudinalMeters: regionInMeters)
+		mapView.setRegion(region, animated: true)
+		getLocationData(url: "https://nominatim.openstreetmap.org/reverse.php?format=json&lat=\(location.coordinate.latitude)&lon=\(location.coordinate.longitude)")
 	}
 	
 	func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-		return
+		locationAutorizationCheck()
 	}
 }
 
