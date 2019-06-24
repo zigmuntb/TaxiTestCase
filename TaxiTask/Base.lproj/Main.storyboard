@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,56 +15,43 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TaxiTask" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i7K-0T-TXO">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="5jq-KT-Wva"/>
                                 </connections>
                             </mapView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iAr-vI-RS7">
-                                <rect key="frame" x="20" y="66" width="335" height="58"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ud5-MZ-sGF">
-                                        <rect key="frame" x="8" y="12" width="319" height="33"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rQl-Ew-uYp">
+                                <rect key="frame" x="20" y="65" width="374" height="20.333333333333329"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="ud5-MZ-sGF" firstAttribute="leading" secondItem="iAr-vI-RS7" secondAttribute="leading" constant="8" id="PL6-ae-1gk"/>
-                                    <constraint firstItem="ud5-MZ-sGF" firstAttribute="top" secondItem="iAr-vI-RS7" secondAttribute="top" constant="12" id="aQ6-hY-L6C"/>
-                                    <constraint firstAttribute="bottom" secondItem="ud5-MZ-sGF" secondAttribute="bottom" constant="13" id="j4o-HU-NDU"/>
-                                    <constraint firstAttribute="height" constant="58" id="sIS-XB-URF"/>
-                                    <constraint firstAttribute="trailing" secondItem="ud5-MZ-sGF" secondAttribute="trailing" constant="8" id="yv5-sr-BKN"/>
-                                </constraints>
-                            </view>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iAr-vI-RS7" secondAttribute="trailing" constant="20" id="L1l-Qx-rTN"/>
-                            <constraint firstItem="iAr-vI-RS7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Soz-hP-7v6"/>
-                            <constraint firstItem="iAr-vI-RS7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="46" id="XOr-dX-07M"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rQl-Ew-uYp" secondAttribute="trailing" constant="20" id="Btt-f0-hcb"/>
+                            <constraint firstItem="rQl-Ew-uYp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="DRF-Ar-a7m"/>
                             <constraint firstItem="i7K-0T-TXO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="b7b-Jm-Uwt"/>
                             <constraint firstItem="i7K-0T-TXO" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="eFu-sm-Zu2"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="iAr-vI-RS7" secondAttribute="bottom" constant="543" id="jzz-6p-3Aq"/>
+                            <constraint firstItem="rQl-Ew-uYp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="45" id="iWJ-J8-hM1"/>
                             <constraint firstItem="i7K-0T-TXO" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="pu6-lu-9BU"/>
                             <constraint firstItem="i7K-0T-TXO" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="xTP-Zf-ayi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="locationName" destination="ud5-MZ-sGF" id="7YX-kV-rgr"/>
+                        <outlet property="locationName" destination="rQl-Ew-uYp" id="CSe-6X-ZoO"/>
                         <outlet property="mapView" destination="i7K-0T-TXO" id="mBS-OR-HP1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="138.0809595202399"/>
+            <point key="canvasLocation" x="136.23188405797103" y="136.95652173913044"/>
         </scene>
     </scenes>
 </document>
