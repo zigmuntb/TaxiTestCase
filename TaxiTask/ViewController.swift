@@ -117,9 +117,23 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 	}
 	
 	private func showAlert() {
-		let alert = UIAlertController(title: "Error", message: "Please turn on geo location", preferredStyle: .alert)
-		alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-		self.present(alert, animated: true, completion: nil)
+		let alertController = UIAlertController (title: "Attention", message: "Please go to settings and turn on location sevices.", preferredStyle: .alert)
+		
+		let settingsAction = UIAlertAction(title: "Ok", style: .default) { _ in
+			
+			guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
+				return
+			}
+			
+			if UIApplication.shared.canOpenURL(settingsUrl) {
+				UIApplication.shared.open(settingsUrl)
+			}
+		}
+		alertController.addAction(settingsAction)
+		let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+		alertController.addAction(cancelAction)
+		
+		present(alertController, animated: true, completion: nil)
 	}
 }
 
